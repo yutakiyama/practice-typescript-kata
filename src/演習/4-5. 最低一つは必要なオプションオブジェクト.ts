@@ -21,13 +21,13 @@ function test(options: AtLeastOne<Options>) {
 }
 test({
   foo: 123,
-  bar: "bar"
+  bar: 'bar',
 });
 test({
-  baz: true
+  baz: true,
 });
 
 // エラー例
 test({});
 
-export { }
+export {};

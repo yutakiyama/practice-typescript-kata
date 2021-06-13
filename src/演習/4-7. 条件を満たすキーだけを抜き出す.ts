@@ -2,7 +2,7 @@
 // @see https://qiita.com/uhyo/items/e4f54ef3b87afdd65546#4-6-%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92%E6%8F%8F%E7%94%BB%E3%81%99%E3%82%8B%E9%96%A2%E6%95%B0
 
 type KeysOfType<Obj, Val> = {
-  [K in keyof Obj]-?: Obj[K] extends Val ? K : never
+  [K in keyof Obj]-?: Obj[K] extends Val ? K : never;
 }[keyof Obj];
 
 // 使用例
@@ -29,8 +29,8 @@ function useNumber<Obj>(obj: Obj, key: KeysOfType<Obj, number>) {
 declare const data: Data;
 
 // これはOK
-useNumber(data, "bar");
+useNumber(data, 'bar');
 // これは型エラー
-useNumber(data, "baz");
+useNumber(data, 'baz');
 
-export { }
+export {};

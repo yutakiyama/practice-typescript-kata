@@ -7,10 +7,7 @@
 function getFoo<T extends object>(
   obj: T
   // Tがfooプロパティを持つ方かどうか
-): T extends { foo: infer E }
-  ? E
-  : unknown
-{
+): T extends { foo: infer E } ? E : unknown {
   // conditional typeが関わっている場合はTSの型推論能力が頼りにならない
   // 存在しないというエラーが出るので
   // 下記とすることでエラー抑制する必要がある
@@ -20,20 +17,20 @@ function getFoo<T extends object>(
 // 使用例
 // numはnumber型
 const num = getFoo({
-  foo: 123
+  foo: 123,
 });
 // strはstring型
 const str = getFoo({
-  foo: "hoge",
-  bar: 0
+  foo: 'hoge',
+  bar: 0,
 });
 // unkはunknown型
 const unk = getFoo({
-  hoge: true
+  hoge: true,
 });
 
 // エラー例
 getFoo(123);
 getFoo(null);
 
-export {}
+export {};

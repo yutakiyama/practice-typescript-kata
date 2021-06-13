@@ -5,21 +5,21 @@ type Speed = 'slow' | 'medium' | 'fast';
 
 function getSpeed(speed: Speed): number {
   switch (speed) {
-    case "slow":
+    case 'slow':
       return 10;
-    case "medium":
+    case 'medium':
       return 50;
-    case "fast":
+    case 'fast':
       return 200;
   }
 }
 
 // 使用例
-const slowSpeed = getSpeed("slow");
-const mediumSpeed = getSpeed("medium");
-const fastSpeed = getSpeed("fast");
+const slowSpeed = getSpeed('slow');
+const mediumSpeed = getSpeed('medium');
+const fastSpeed = getSpeed('fast');
 
 // エラー例
-getSpeed("veryfast");
+getSpeed('veryfast');
 
 export {};

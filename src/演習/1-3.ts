@@ -9,7 +9,7 @@ type IsPositiveFunc = (num: number) => boolean;
 //   (num: number): boolean
 // }
 
-const isPositive: IsPositiveFunc = (num :number) => num >= 0;
+const isPositive: IsPositiveFunc = (num: number) => num >= 0;
 
 // 使用例
 isPositive(5);

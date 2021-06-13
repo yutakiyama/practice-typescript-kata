@@ -9,20 +9,20 @@
 type Func<A, R> =
   // undefined型がA型の部分型であるという条件を表す
   undefined extends A
-  // undefinedがA型の部分型であるとき
-  ? (arg?: A) => R
-  // そうでないとき
-  : (arg: A) => R;
+    ? // undefinedがA型の部分型であるとき
+      (arg?: A) => R
+    : // そうでないとき
+      (arg: A) => R;
 
 // 使用例
-const f1: Func<number, number> = num => num + 10;
+const f1: Func<number, number> = (num) => num + 10;
 const v1: number = f1(10);
 
 const f2: Func<undefined, number> = () => 0;
 const v2: number = f2();
 const v3: number = f2(undefined);
 
-const f3: Func<number | undefined, number> = num => (num || 0) + 10;
+const f3: Func<number | undefined, number> = (num) => (num || 0) + 10;
 const v4: number = f3(123);
 const v5: number = f3();
 
